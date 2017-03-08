@@ -1,0 +1,5 @@
+[user]
+  name = Kimura Masayuki
+  email = masa0x80@gmail.com
+[core]
+  hooksPath = ~/.config.local/git/hooks

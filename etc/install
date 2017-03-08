@@ -1,0 +1,34 @@
+#!/bin/bash
+
+echo 'Downloading dotfiles...'
+url='https://github.com/masa0x80/dotfiles.local/archive/master.zip'
+mkdir -p /tmp/$$ && cd /tmp/$$
+
+if type yum > /dev/null 2>&1; then
+  sudo -E yum install -y sudo which make bzip2 unzip curl
+fi
+
+if type curl > /dev/null 2>&1; then
+  curl -Lo dotfiles.local.zip "$url"
+  if type unzip > /dev/null 2>&1; then
+    unzip dotfiles.local.zip
+    mv dotfiles.local-master $HOME/.dotfiles.local
+    cd $_
+    echo 'Initialize and install tools...'
+    if make deploy; then
+      if make init; then
+        echo 'Complete!!'
+      else
+        echo 'error: make init'
+      fi
+    else
+      echo 'error: make deploy'
+    fi
+  else
+    echo 'error: unzip not found'
+    echo '*** Please install unzip ***'
+  fi
+else
+  echo 'error: curl not found'
+  echo '*** Please install curl ***'
+fi
