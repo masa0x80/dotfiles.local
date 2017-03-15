@@ -61,8 +61,8 @@ $ make install
 `make install` execute the following tasks.
 
 1. `make update`
-  - Update dotfiles repository
+    - Update dotfiles repository
 2. `make init`
-  - Install tools by `MItamae`
+    - Install tools by `MItamae`
 3. `make deploy`
-  - Deploy local dotfiles: create symlink to `.config.local` under your home directory
+    - Deploy local dotfiles: create symlink to `.config.local` under your home directory
