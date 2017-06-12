@@ -3,6 +3,3 @@ execute 'xcode --install' do
 end
 
 include_role 'common'
-
-include_cookbook 'cask'
-include_cookbook 'mas'
