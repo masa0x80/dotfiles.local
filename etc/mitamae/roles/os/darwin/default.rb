@@ -1,5 +1,3 @@
-execute 'xcode --install' do
-  not_if 'type -a xcode-select > /dev/null 2>&1'
-end
+include_cookbook 'brew-bundle'
 
-include_role 'common'
+include_role 'local'
