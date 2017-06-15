@@ -1,3 +1,6 @@
+# When executing `make init` in the dotfiles directory, both common and append roles are done.
+export DOTFILE_ROLE='common,append'
+
 if (( $+commands[ghq] )); then
   export DOTFILE=$(ghq root)/github.com/masa0x80/dotfiles
 fi
