@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if test -d $DOTFILE; then
+  echo "Update: $DOTFILE"
+  cd $DOTFILE
+  make init
+fi
+
+if test -d $DOTFILE_LOCAL; then
+  echo "Update: $DOTFILE_LOCAL"
+  cd $DOTFILE_LOCAL
+  make init
+fi

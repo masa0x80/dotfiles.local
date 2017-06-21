@@ -3,4 +3,5 @@ export DOTFILE_ROLE='common,append'
 
 if (( $+commands[ghq] )); then
   export DOTFILE=$(ghq root)/github.com/masa0x80/dotfiles
+  export DOTFILE_LOCAL=$(ghq root)/github.com/masa0x80/dotfiles.local
 fi

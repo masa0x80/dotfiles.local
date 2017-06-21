@@ -3,5 +3,6 @@ set -gx DOTFILE_ROLE 'common,append'
 
 if type -qa ghq
   set -gx DOTFILE (ghq root)/github.com/masa0x80/dotfiles
-  set -gx fish_user_paths (ghq root)/github.com/masa0x80/dotfiles.local/bin $fish_user_paths
+  set -gx DOTFILE_LOCAL (ghq root)/github.com/masa0x80/dotfiles.local
+  set -gx fish_user_paths $DOTFILE_LOCAL/bin $fish_user_paths
 end
