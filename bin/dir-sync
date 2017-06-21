@@ -6,7 +6,10 @@ SRC_DIR="$1"
 DEST_DIR="$2"
 
 ls -1 "${SRC_DIR}" | while read file; do
-echo $file
   trap 'exit 1' SIGHUP SIGINT SIGQUIT SIGTERM
-  rsync -av --delete --stats --bwlimit=${BWLIMIT:-0} "${SRC_DIR}/${file}/" "${DEST_DIR}/${file}"
+  if test -d "${SRC_DIR}/${file}"; then
+    rsync -avz --delete --stats --bwlimit=${BWLIMIT:-0} "${SRC_DIR}/${file}/" "${DEST_DIR}/${file}"
+  else
+    rsync -avz --delete --stats --bwlimit=${BWLIMIT:-0} "${SRC_DIR}/${file}" "${DEST_DIR}/${file}"
+  fi
 done
