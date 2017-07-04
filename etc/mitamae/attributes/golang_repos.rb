@@ -5,5 +5,6 @@ node.reverse_merge!(
     github.com/Masterminds/glide
     github.com/motemen/gore
     github.com/masa0x80/mdv/...
+    github.com/masa0x80/secman/...
   )
 )
