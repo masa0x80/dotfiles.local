@@ -1,13 +1,16 @@
 #!/bin/sh
 
+LOG=/tmp/update-dotfiles.log
+echo '' > $LOG
+
 if test -d $DOTFILE; then
-  echo "Update: $DOTFILE"
+  echo "Update: $DOTFILE" | tee -a $LOG
   cd $DOTFILE
-  make init
+  make init | tee -a $LOG
 fi
 
 if test -d $DOTFILE_LOCAL; then
-  echo "Update: $DOTFILE_LOCAL"
+  echo "Update: $DOTFILE_LOCAL" | tee -a $LOG
   cd $DOTFILE_LOCAL
-  make init
+  make init | tee -a $LOG
 fi
