@@ -7,6 +7,7 @@ if platform == :darwin
       export PATH=#{node[:env][:path]}
       brew tap homebrew/bundle
       brew bundle --file=#{File.join(File.expand_path('../../..', __FILE__), 'attributes', "Brewfile.local")}
+      brew cleanup
     EOF
     user node[:user]
   end
