@@ -4,6 +4,7 @@ cask 'box-sync'
 cask 'dropbox'
 cask 'duet'
 cask 'gyazo'
+cask 'marp'
 cask 'skype'
 
 mas 'Kobito', id: 896624060
