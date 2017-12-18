@@ -1,5 +1,5 @@
 [user]
   name = KIMURA Masayuki
   email = masa0x80@gmail.com
-[core]
-  hooksPath = ~/.config.local/git/hooks
+[includeIf "gitdir:~/.ghq/github.com/"]
+  path = ~/.config.local/git/github/config
