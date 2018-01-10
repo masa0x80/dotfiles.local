@@ -4,6 +4,8 @@ set -gx DOTFILE_ROLE 'common,append'
 # hub
 set -gx HUB_CONFIG $HOME/.config/hub/config
 
+set -gx DISABLE_ISSUE_NUMBER 1
+
 if type -qa ghq
     set -gx DOTFILE (ghq root)/github.com/masa0x80/dotfiles
     set -gx DOTFILE_LOCAL (ghq root)/github.com/masa0x80/dotfiles.local
