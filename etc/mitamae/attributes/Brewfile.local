@@ -1,6 +1,7 @@
 cask 'appcleaner'
 cask 'bettertouchtool'
 cask 'box-sync'
+cask 'discord'
 cask 'dropbox'
 cask 'duet'
 cask 'gyazo'
