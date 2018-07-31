@@ -7,4 +7,5 @@ export HUB_CONFIG=$HOME/.config/hub/config
 if (( $+commands[ghq] )); then
   export DOTFILE=$(ghq root)/github.com/masa0x80/dotfiles
   export DOTFILE_LOCAL=$(ghq root)/github.com/masa0x80/dotfiles.local
+  export PATH=$PATH:$DOTFILE_LOCAL/bin
 fi
