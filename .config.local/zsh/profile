@@ -1,5 +1,5 @@
 # When executing `make init` in the dotfiles directory, both common and append roles are done.
-export DOTFILE_ROLE='common,append'
+export DOTFILE_ROLE='common'
 
 # hub
 export HUB_CONFIG=$HOME/.config/hub/config
