@@ -1,4 +1,2 @@
 [core]
   hooksPath = ~/.config.local/git/github/hooks
-[commit]
-  template = ~/.config.local/git/github/commit_template
