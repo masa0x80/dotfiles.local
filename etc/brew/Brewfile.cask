@@ -1,0 +1,7 @@
+cask 'appcleaner'
+cask 'box-sync'
+cask 'discord'
+cask 'dropbox'
+cask 'gyazo'
+cask 'marp'
+cask 'skype'

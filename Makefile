@@ -1,36 +1,67 @@
-DOTPATH  := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
+DOTFILE  := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 EXCLUDES := .DS_Store .git
 TARGETS  := $(wildcard .??*)
 DOTFILES := $(filter-out $(EXCLUDES), $(TARGETS))
 
-all: install
+.PHONY: all
+all: update deploy install
 
+.PHONY: help
 help:
-	@echo "make list           #=> List the files"
+	@echo "make all            #=> Updating, deploying and installing"
 	@echo "make update         #=> Fetch changes"
+	@echo "make install        #=> Setup environment"
 	@echo "make deploy         #=> Create symlink"
-	@echo "make init           #=> Setup environment"
-	@echo "make install        #=> Updating, deploying and initializng"
+	@echo "make list           #=> List the files"
 	@echo "make clean          #=> Remove the dotfiles"
 
-list:
-	@$(foreach val, $(DOTFILES), ls -dF $(val);)
-
+.PHONY: update
 update:
-	git pull origin master
+	git pull --no-commit origin master
 
+.PHONY: install
+install: brew-bundle brew-mas
+
+.PHONY: deploy
 deploy:
 	@echo 'Deploy dotfiles.'
 	@echo ''
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
-init:
-	@DOTFILE=$(DOTPATH) cd ./etc/mitamae; bash init.sh
+.PHONY: list
+list:
+	@$(foreach val, $(DOTFILES), ls -dF $(val);)
 
-install: update init deploy
-
+.PHONY: clean
 clean:
 	@echo 'Remove dot files in your home directory...'
 	@-$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
-	-rm -rf $(DOTPATH)
+	-rm -rf $(DOTFILE)
 
+# brew {{{
+
+.PHONY: brew-init
+brew-init:
+	@xcode-select --install 2>/dev/null || :
+	@./scripts/brew_init
+
+.PHONY: brew
+brew: brew-init
+	brew bundle --file=etc/brew/Brewfile
+
+.PHONY: brew-cask
+brew-cask: brew-init
+	brew bundle --file=etc/brew/Brewfile.cask
+
+.PHONY: brew-cask-upgrade
+brew-cask-upgrade: brew-init
+	brew cask upgrade
+
+.PHONY: brew-mas
+brew-mas: brew-init
+	brew bundle --file=etc/brew/Brewfile.mas
+
+.PHONY: brew-bundle
+brew-bundle: brew brew-cask
+
+# }}}
