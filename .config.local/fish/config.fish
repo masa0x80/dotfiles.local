@@ -1,1 +1,1 @@
-__load_file $HOME/Box/.config/config.fish
+__load_file "$HOME/Library/Mobile Documents/com~apple~CloudDocs/.config/config.fish"

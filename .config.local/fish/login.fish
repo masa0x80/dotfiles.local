@@ -5,7 +5,7 @@ set -gx DISABLE_ISSUE_NUMBER 1
 
 type -qa ghq && set -gx DOTFILE_LOCAL (ghq root)/github.com/masa0x80/dotfiles.local
 
-__load_file $HOME/Box/.config/login.fish
+__load_file "$HOME/Library/Mobile Documents/com~apple~CloudDocs/.config/login.fish"
 
 # Append $DOTFILE_LOCAL/bin to $PATH
 if not set -q DOTFILE_LOCAL
