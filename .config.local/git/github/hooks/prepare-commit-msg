@@ -1,12 +1,23 @@
 #!/bin/sh
 
-if test "$DISABLE_ISSUE_NUMBER" = ''; then
-  if [ "$2" == '' ]; then
-    mv $1 $1.tmp
-    ISSUE_NUMBER=`git rev-parse --abbrev-ref @ | sed -e 's/^[^0-9]*\([0-9]*\).*/\1/'`
-    if [ ! -z $ISSUE_NUMBER ]; then
-      echo "[#${ISSUE_NUMBER}] " > $1
+source "$(dirname $0)/_hook_init"
+
+# $GIT_DIR/hooks 配下にhookファイルがないか、$GLOBAL_GIT_HOOKフラグが立っている場合実行する
+if test -z "$HOOK_FILE" || test $(($GLOBAL_GIT_HOOK & $PREPARE_COMMIT_MSG)) = $PREPARE_COMMIT_MSG; then
+  COMMIT_MSG_FILE=$1
+  COMMIT_SOURCE=$2
+  SHA1=$3
+
+  if test -n "$DISABLE_ISSUE_NUMBER"; then
+    if test -z "$COMMIT_SOURCE"; then
+      mv $COMMIT_MSG_FILE $COMMIT_MSG_FILE.tmp
+      ISSUE_NUMBER=$(git rev-parse --abbrev-ref @ | sed -e 's/^[^0-9]*\([0-9]*\).*/\1/')
+      if test -n "$ISSUE_NUMBER"; then
+        echo '' > $COMMIT_MSG_FILE
+        echo '' > $COMMIT_MSG_FILE
+        echo "#$ISSUE_NUMBER" >> $COMMIT_MSG_FILE
+      fi
+      cat $COMMIT_MSG_FILE.tmp >> $COMMIT_MSG_FILE
     fi
-    cat $1.tmp >> $1
   fi
 fi
