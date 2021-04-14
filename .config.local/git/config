@@ -4,4 +4,4 @@
 [includeIf "gitdir:~/.ghq/github.com/"]
   path = ~/.config.local/git/github/config
 [include]
-  path = ~/Dropbox/git_config
+  path = ~/Box/dropbox/git_config
