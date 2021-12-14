@@ -14,7 +14,7 @@ if test -z "$HOOK_FILE" || test $(($GLOBAL_GIT_HOOK & $PREPARE_COMMIT_MSG)) = $P
       ISSUE_NUMBER=$(git rev-parse --abbrev-ref @ | sed -e 's/^[^0-9]*\([0-9]*\).*/\1/')
       if test -n "$ISSUE_NUMBER"; then
         echo '' > $COMMIT_MSG_FILE
-        echo '' > $COMMIT_MSG_FILE
+        echo '' >> $COMMIT_MSG_FILE
         echo "#$ISSUE_NUMBER" >> $COMMIT_MSG_FILE
       fi
       cat $COMMIT_MSG_FILE.tmp >> $COMMIT_MSG_FILE
