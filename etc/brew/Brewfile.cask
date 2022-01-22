@@ -1,5 +1,5 @@
 cask 'appcleaner'
-cask 'box-sync'
+cask 'box-drive'
 cask 'discord'
 cask 'dropbox'
 cask 'google-japanese-ime'
