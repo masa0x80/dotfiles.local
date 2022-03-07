@@ -1,7 +1,5 @@
 [user]
   name = KIMURA Masayuki
   email = masa0x80@gmail.com
-[includeIf "gitdir:~/.ghq/github.com/"]
-  path = ~/.config.local/git/github/config
 [include]
   path = ~/Box/dropbox/git_config
