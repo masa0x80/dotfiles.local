@@ -1,1 +1,1 @@
-  export PATH=$DOTFILE_LOCAL/bin:$PATH
+path=($DOTFILE_LOCAL/bin(N-/) $path)
