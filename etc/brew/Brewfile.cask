@@ -1,3 +1,4 @@
+# vim: ft=ruby
 cask 'appcleaner'
 cask 'box-drive'
 cask 'discord'

@@ -1,3 +1,3 @@
+# vim: ft=ruby
 mas 'Bitwarden', id: 1352778147
 mas 'LINE', id: 539883307
-mas 'Night Owl', id: 428834068
