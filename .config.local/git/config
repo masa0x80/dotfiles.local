@@ -1,5 +1,7 @@
 [user]
   name = KIMURA Masayuki
   email = masa0x80@gmail.com
+[commit]
+  template = ~/.config.local/git/template
 [include]
   path = ~/Box/dropbox/git_config
