@@ -2,16 +2,28 @@
 
 
 # ==== Emoji Prefix ====
-# add ⭐ 機能追加 :star:
-# fix ✏️  修正 :pencil2:
-# bug 🐛 バグ修正 :bug:
-# sec 👮 セキュリティー修正 :cop:
-# conf 🔧 設定ファイル修正 :wrench:
-# test ✅ テストの追加 :white_check_mark:
-# refactor ✨ リファクタリング :sparkles:
-# doc 📚 ドキュメント追加 :books:
-# perf 🚀 パフォーマンス改善 :rocket:
-# del 🗑️  ファイル削除 :wastebasket:
-# version 🔖 バージョンアップ :bookmark:
-# wip 🚧 作業中 :construction:
-# init 🌱 イニシャルコミット :seedling:
+# 🎸 feat:                 機能追加
+# 🐛 bug:                  バグ修正
+# ✏️ fix:                  修正
+# 🩹 Tweaks                Tweaks
+# 📚 docs:                 ドキュメント追加・修正
+# 💄 style:                 Lintエラーの修正やコードスタイルの修正
+# 💡 refactor:             リファクタリング
+# ⚡ perf:                 パフォーマンス向上
+# ✅ test:                 テストの追加・修正
+# 🤖 chore:                ビルドツールやライブラリーで自動生成されたものをコミットするとき
+# 🔥 remove:               ファイル削除
+# 🎡 ci:                   CI関連の変更
+# 💚 merge:                コンフリクト解消
+# 🔧 config:               コンフィグ修正
+# 👮 security:             セキュリティー修正
+# 🔖 version:              リリース
+# 🚧 WIP                   WIP
+# 💥 BREAKING CHANGE:      BREAKING CHANGE
+# 🚑️ Hotfix                Hotfix
+# 📌 Fix version           バージョン固定
+# ➕ Add dependencies      依存関係追加
+# ➖ Add dependencies      依存関係削除
+# ⬆️Upgrade dependencies   依存関係バージョンアップ
+# ⬇️Downgrade dependencies 依存関係バージョンダウン
+# 🌱 Initial commit        Initial commit
