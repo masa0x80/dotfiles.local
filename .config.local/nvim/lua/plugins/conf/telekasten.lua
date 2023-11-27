@@ -37,7 +37,7 @@ require("telekasten").setup({
 	rename_update_links = true,
 
 	vaults = {
-		masa723 = {
+		home = {
 			home = vim.fn.expand("$HOME/.ghq/github.com/masa0x80/masa723-vault"),
 		},
 	},
