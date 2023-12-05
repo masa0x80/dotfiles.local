@@ -7,7 +7,7 @@ require("obsidian").setup({
 		},
 		{
 			name = "home",
-			path = vim.fn.expand("$HOME/.ghq/github.com/masa0x80/masa723-vault"),
+			path = vim.fn.expand("$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/masa723"),
 		},
 	},
 	daily_notes = {

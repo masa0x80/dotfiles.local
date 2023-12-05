@@ -38,7 +38,7 @@ require("telekasten").setup({
 
 	vaults = {
 		home = {
-			home = vim.fn.expand("$HOME/.ghq/github.com/masa0x80/masa723-vault"),
+			home = vim.fn.expand("$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/masa723"),
 		},
 	},
 })
