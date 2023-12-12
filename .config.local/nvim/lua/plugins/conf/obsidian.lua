@@ -1,5 +1,48 @@
-require("obsidian").setup({
+local c = require("config.color")
+local opts = {
 	dir = vim.fn.expand("$SCRAPBOOK_DIR"),
+	daily_notes = {
+		folder = "daily",
+		date_format = "%Y-%m-%d",
+		template = "daily.md",
+	},
+	completion = {
+		nvim_cmp = true,
+		min_chars = 1,
+		new_notes_location = "current_dir",
+		use_path_only = true,
+	},
+	note_id_func = function(title)
+		return title
+	end,
+	disable_frontmatter = true,
+	templates = {
+		subdir = "templates",
+		date_format = "%Y-%m-%d",
+		time_format = "%H:%M",
+	},
+	follow_url_func = function(url)
+		vim.fn.jobstart({ "open", url })
+	end,
+	ui = {
+		checkboxes = {
+			[" "] = { char = "", hl_group = "ObsidianTodo" },
+			["%-"] = { char = "󰡖", hl_group = "ObsidianDone" },
+			["x"] = { char = "󰄵", hl_group = "ObsidianDone" },
+			[">"] = { char = "", hl_group = "ObsidianRightArrow" },
+			["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+		},
+		hl_groups = {
+			ObsidianTodo = { bold = true, fg = c.orange },
+			ObsidianDone = { bold = true, fg = c.cyan },
+			ObsidianRightArrow = { bold = true, fg = c.orange },
+			ObsidianTilde = { bold = true, fg = c.red },
+			ObsidianRefText = { underline = true, fg = c.purple },
+			ObsidianExtLinkIcon = { fg = c.purple },
+			ObsidianTag = { underline = true, fg = c.cyan, bg = c.bg0 },
+			ObsidianHighlightText = { bg = c.dark_yellow },
+		},
+	},
 	workspaces = {
 		{
 			name = "scrapbook",
@@ -10,32 +53,5 @@ require("obsidian").setup({
 			path = vim.fn.expand("$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/masa723"),
 		},
 	},
-	daily_notes = {
-		folder = "daily",
-		date_format = "%Y-%m-%d",
-		template = "daily.md",
-	},
-	completion = {
-		nvim_cmp = true,
-		min_chars = 2,
-		new_notes_location = "current_dir",
-		prepend_note_id = true,
-		prepend_note_path = false,
-		use_path_only = false,
-	},
-	disable_frontmatter = true,
-	templates = {
-		subdir = "templates",
-		date_format = "%Y-%m-%d",
-		time_format = "%H:%M",
-	},
-	ui = {
-		checkboxes = {
-			[" "] = { char = "", hl_group = "ObsidianTodo" },
-			["%-"] = { char = "󰡖", hl_group = "ObsidianDone" },
-			["x"] = { char = "󰄵", hl_group = "ObsidianDone" },
-			[">"] = { char = "", hl_group = "ObsidianRightArrow" },
-			["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-		},
-	},
-})
+}
+require("obsidian").setup(opts)

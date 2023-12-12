@@ -22,7 +22,7 @@ require("telekasten").setup({
 	},
 
 	image_link_style = "markdown",
-	image_subdir = "img",
+	image_subdir = "assets",
 	extension = ".md",
 
 	uuid_type = "%Y%m%d%H%M%S",
@@ -39,6 +39,23 @@ require("telekasten").setup({
 	vaults = {
 		home = {
 			home = vim.fn.expand("$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/masa723"),
+
+			auto_set_filetype = false,
+
+			image_link_style = "markdown",
+			image_subdir = "assets",
+			extension = ".md",
+
+			uuid_type = "%Y%m%d%H%M%S",
+			uuid_sep = "-",
+
+			tag_notation = "#tag",
+
+			follow_creates_nonexisting = true,
+			dailies_create_nonexisting = true,
+			weeklies_create_nonexisting = true,
+
+			rename_update_links = true,
 		},
 	},
 })
