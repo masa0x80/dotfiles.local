@@ -1,5 +1,5 @@
 local c = require("config.color")
-local opts = {
+require("obsidian").setup({
 	dir = vim.fn.expand("$SCRAPBOOK_DIR"),
 	daily_notes = {
 		folder = "daily",
@@ -53,5 +53,4 @@ local opts = {
 			path = vim.fn.expand("$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/masa723"),
 		},
 	},
-}
-require("obsidian").setup(opts)
+})
