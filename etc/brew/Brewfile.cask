@@ -1,6 +1,5 @@
 # vim: ft=ruby
 cask "appcleaner"
-cask "box-drive"
 cask "discord"
 cask "dropbox"
 cask "google-japanese-ime"
