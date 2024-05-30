@@ -2,7 +2,7 @@ module.exports = {
   defaultBrowser: "Vivaldi",
   handlers: [
     {
-      match: /figma\.com\/file\//,
+      match: /figma\.com\//,
       browser: "Figma",
     },
     {
