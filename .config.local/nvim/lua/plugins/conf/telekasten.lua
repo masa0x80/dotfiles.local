@@ -67,3 +67,10 @@ require("telekasten").setup({
 		},
 	},
 })
+
+vim.api.nvim_create_user_command("OpenObsidian", function()
+	local vault_path = require("telekasten").Cfg.home
+	local path = vim.fn.shellescape(vim.fn.expand("%"):gsub(vault_path .. "/", ""))
+	local vault = vault_path:gsub(".*/", "")
+	vim.fn.execute("!open 'obsidian://open?vault=" .. vault .. "&file=" .. path .. "'")
+end, {})
