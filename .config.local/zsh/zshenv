@@ -1,8 +1,9 @@
 # hub
 export HUB_CONFIG=$HOME/.config/hub/config
 
-export SCRAPBOOK_DIR="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/scrapbook"
-export OBSIDIAN_BOOKMARKS_DIR="$SCRAPBOOK_DIR/bookmarks"
+export SCRAPBOOK_DIR="$HOME/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents/scrapbook"
+
+export BOOKMARKS_DIR="$SCRAPBOOK_DIR/pages/bookmarks"
 
 if (( $+commands[ghq] )); then
   export DOTFILE=$(ghq root)/github.com/masa0x80/dotfiles

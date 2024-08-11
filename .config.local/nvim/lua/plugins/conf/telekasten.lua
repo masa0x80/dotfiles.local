@@ -1,16 +1,18 @@
-local home = vim.fn.expand("$SCRAPBOOK_DIR")
+local default = vim.fn.expand("$SCRAPBOOK_DIR")
+local family = vim.fn.expand("$HOME/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents/masa723")
+
 require("telekasten").setup({
-	home = home,
+	home = default .. "/pages",
 
 	auto_set_filetype = false,
 
-	dailies = home .. "/" .. "daily",
-	weeklies = home .. "/" .. "weekly",
-	templates = home .. "/" .. "templates",
+	dailies = default .. "/journals",
+	weeklies = default .. "/pages/weekly",
+	templates = default .. "/pages/templates",
 
-	template_new_note = home .. "/" .. "templates/new_note.md",
-	template_new_daily = home .. "/" .. "templates/daily.md",
-	template_new_weekly = home .. "/" .. "templates/weekly.md",
+	template_new_note = default .. "/templates/new_note.md",
+	template_new_daily = default .. "/templates/daily.md",
+	template_new_weekly = default .. "/templates/weekly.md",
 
 	calendar_opts = {
 		-- calendar week display mode: 1 .. 'WK01', 2 .. 'WK 1', 3 .. 'KW01', 4 .. 'KW 1', 5 .. '1'
@@ -41,8 +43,16 @@ require("telekasten").setup({
 	rename_update_links = true,
 
 	vaults = {
-		home = {
-			home = vim.fn.expand("$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/masa723"),
+		family = {
+			home = family .. "/pages",
+
+			dailies = family .. "/journals",
+			weeklies = family .. "/pages/weekly",
+			templates = family .. "/pages/templates",
+
+			template_new_note = family .. "/templates/new_note.md",
+			template_new_daily = family .. "/templates/daily.md",
+			template_new_weekly = family .. "/templates/weekly.md",
 
 			auto_set_filetype = false,
 
